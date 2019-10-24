@@ -1,0 +1,59 @@
+[
+    {
+      "model": "kalisAPI.assessment",
+      "pk": 1,
+      "fields": {
+        "time": "2019-10-24 00:00:00",
+        "mental_status": "Alert and oriented",
+        "pupil_response": "2mm",
+        "heart_sounds": "S1, S2",
+        "edema": "2+",
+        "oxygen_rate": 2,
+        "bowel_sounds": "active",
+        "npo": "yes",
+        "last_bowel_movement": "2019-10-20",
+        "urine_color": "yellow",
+        "urine_odor": "normal",
+        "urine_amount": 100,
+        "patient_id": 1
+      }
+    },
+    {
+      "model": "kalisAPI.assessment",
+      "pk": 2,
+      "fields": {
+        "time": "2019-10-24 00:00:00",
+        "mental_status": "Disoriented to time and place",
+        "pupil_response": "1mm",
+        "heart_sounds": "murmur",
+        "edema": "2+",
+        "oxygen_rate": 2,
+        "bowel_sounds": "active",
+        "npo": "no",
+        "last_bowel_movement": "2019-10-20",
+        "urine_color": "yellow",
+        "urine_odor": "normal",
+        "urine_amount": 100,
+        "patient_id": 2
+      }
+    },
+    {
+      "model": "kalisAPI.assessment",
+      "pk": 3,
+      "fields": {
+        "time": "2019-10-24 00:00:00",
+        "mental_status": "alert and oriented",
+        "pupil_response": "none",
+        "heart_sounds": "s1, s2",
+        "edema": "2+",
+        "oxygen_rate": 2,
+        "bowel_sounds": "active",
+        "npo": "yes",
+        "last_bowel_movement": "2019-10-20",
+        "urine_color": "yellow",
+        "urine_odor": "normal",
+        "urine_amount": 100,
+        "patient_id": 3
+      }
+    }
+  ]

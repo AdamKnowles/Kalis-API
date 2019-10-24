@@ -3,7 +3,7 @@ from .patient import Patient
 
 
 class VitalSigns(models.Model):
-    time = models.DateField(auto_now_add=True)
+    time = models.DateTimeField(auto_now_add=True)
     temperature = models.DecimalField(max_digits=5, decimal_places=1)
     heart_rate = models.IntegerField()
     blood_pressure = models.CharField(max_length=50)

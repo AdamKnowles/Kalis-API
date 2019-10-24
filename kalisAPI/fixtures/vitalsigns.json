@@ -1,0 +1,41 @@
+[
+    {
+      "model": "kalisAPI.vitalsigns",
+      "pk": 1,
+      "fields": {
+        "time": "2019-09-04 00:00:00",
+        "temperature": 98.6,
+        "heart_rate": 70,
+        "blood_pressure": "120/76",
+        "respiration_rate": 18,
+        "oxygen_saturation": 93,
+        "patient_id": 1
+      }
+    },
+    {
+      "model": "kalisAPI.vitalsigns",
+      "pk": 2,
+      "fields": {
+        "time": "2019-09-04 00:00:00",
+        "temperature": 100.0,
+        "heart_rate": 91,
+        "blood_pressure": "130/90",
+        "respiration_rate": 18,
+        "oxygen_saturation": 94,
+        "patient_id": 2
+      }
+    },
+    {
+      "model": "kalisAPI.vitalsigns",
+      "pk": 3,
+      "fields": {
+        "time": "2019-09-04 00:00:00",
+        "temperature": 97.8,
+        "heart_rate": 60,
+        "blood_pressure": "100/60",
+        "respiration_rate": 18,
+        "oxygen_saturation": 99,
+        "patient_id": 3
+      }
+    }
+  ]

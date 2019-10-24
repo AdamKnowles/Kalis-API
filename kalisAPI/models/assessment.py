@@ -3,7 +3,7 @@ from .patient import Patient
 
 
 class Assessment(models.Model):
-    time = models.DateField(auto_now_add=True)
+    time = models.DateTimeField(auto_now_add=True)
     mental_status = models.CharField(max_length=100)
     pupil_response = models.CharField(max_length=50)
     heart_sounds = models.CharField(max_length=50)

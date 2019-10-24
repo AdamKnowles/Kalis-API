@@ -1,0 +1,35 @@
+[
+    {
+      "model": "kalisAPI.patient",
+      "pk": 1,
+      "fields": {
+        "first_name": "Adam",
+        "last_name": "Knowles",
+        "birth_date": "1987-05-24",
+        "sex": "Male",
+        "diagnosis": "Gout"
+      }
+    },
+    {
+      "model": "kalisAPI.patient",
+      "pk": 2,
+      "fields": {
+        "first_name": "Grant",
+        "last_name": "Yentzer",
+        "birth_date": "1991-05-29",
+        "sex": "Male",
+        "diagnosis": "AKI"
+      }
+    },
+    {
+      "model": "kalisAPI.patient",
+      "pk": 3,
+      "fields": {
+        "first_name": "Jeremy",
+        "last_name": "Davis",
+        "birth_date": "1991-01-29",
+        "sex": "Male",
+        "diagnosis": "Anxiety"
+      }
+    }
+  ]
