@@ -3,9 +3,8 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from kalisAPI.models import Patient, VitalSigns
-from .vitalsigns import VitalSignSerializer
-from rest_framework.decorators import action
+from kalisAPI.models import VitalSigns, Patient
+
 
 
 """Author: Adam Knowles
@@ -13,55 +12,58 @@ Purpose: Allow a user to communicate with the Kalis database to GET POST and DEL
 Methods: GET DELETE(id) POST"""
 
 
-class PatientSerializer(serializers.HyperlinkedModelSerializer):
-    """JSON serializer for patients
+class VitalSignSerializer(serializers.HyperlinkedModelSerializer):
+    """JSON serializer for vital signs
 
     Arguments:
         serializers
     """
-    
+
     class Meta:
-        model = Patient
+        model = VitalSigns
         url = serializers.HyperlinkedIdentityField(
-            view_name='patient',
+            view_name='vitalsign',
             lookup_field='id'
         )
-        fields = ('id', 'first_name', 'last_name', 'birth_date', 'sex', 'diagnosis')
+        fields = ('id', 'time', 'temperature', 'heart_rate', 'blood_pressure', 'respiration_rate', 'oxygen_saturation', 'patient')
 
         depth = 1
 
 
-class Patients(ViewSet):
+class VitalSign(ViewSet):
     """Patients for Kalis"""
 
     def create(self, request):
         """Handle POST operations
 
         Returns:
-            Response -- JSON serialized patient instance
+            Response -- JSON serialized vital sign instance
         """
-        new_patient = Patient()
-        new_patient.first_name = request.data["first_name"]
-        new_patient.last_name = request.data["last_name"]
-        new_patient.birth_date = request.data["birth_date"]
-        new_patient.sex = request.data["sex"]
-        new_patient.diagnosis = request.data["diagnosis"].lower()
-        new_patient.save()
+        new_vitalsign = VitalSigns()
+        new_vitalsign.time = request.data["time"]
+        new_vitalsign.temperature = request.data["temperature"]
+        new_vitalsign.heart_rate = request.data["heart_rate"]
+        new_vitalsign.blood_pressure = request.data["blood_pressure"]
+        new_vitalsign.respiration_rate = request.data["respiration_rate"]
+        new_vitalsign.oxygen_saturation = request.data["oxygen_saturation"]
+        patient = Patient.objects.get(pk=request.data["patient_id"])
+        new_vitalsign.patient = patient
+        new_vitalsign.save()
 
-        serializer = PatientSerializer(new_patient, context={'request': request})
+        serializer = VitalSignSerializer(new_vitalsign, context={'request': request})
 
         return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
-        """Handle GET requests for single patient
+        """Handle GET requests for single vital sign set
 
         Returns:
             Response -- JSON serialized patient instance
         """
         try:
             
-            patient = Patient.objects.get(pk=pk)
-            serializer = PatientSerializer(patient, context={'request': request})
+            vitalsign = VitalSigns.objects.get(pk=pk)
+            serializer = VitalSignSerializer(vitalsign, context={'request': request})
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
@@ -73,12 +75,12 @@ class Patients(ViewSet):
             Response -- 200, 404, or 500 status code
         """
         try:
-            patient = Patient.objects.get(pk=pk)
-            patient.delete()
+            vitalsign = VitalSigns.objects.get(pk=pk)
+            vitalsign.delete()
 
             return Response({}, status=status.HTTP_204_NO_CONTENT)
 
-        except Patient.DoesNotExist as ex:
+        except VitalSigns.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
         except Exception as ex:
@@ -92,16 +94,8 @@ class Patients(ViewSet):
         """
 
     # at the bottom, in the serializer, it returns all patients because "patients" is defined as "patient.objects.all()"
-        patients = Patient.objects.all()
-        patient_list = []
-
-        limit = self.request.query_params.get('limit', None)
-        if limit is not None:
-            patients = Patient.objects.all()[:int(limit)]
-
+        vitalsigns = VitalSigns.objects.all()
         
-        serializer = PatientSerializer(
-            patients, many=True, context={'request': request})
+        serializer = VitalSignSerializer(
+            vitalsigns, many=True, context={'request': request})
         return Response(serializer.data)
-
-    

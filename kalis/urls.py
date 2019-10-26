@@ -5,10 +5,15 @@ from kalisAPI.views import register_user, login_user
 from kalisAPI.models import *
 from kalisAPI.views import UserViewSet
 from kalisAPI.views import Patients
+from kalisAPI.views import VitalSign
+from kalisAPI.views import Assessments
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'users', UserViewSet, 'user')
 router.register(r'patients', Patients, 'patient')
+router.register(r'vitalsigns', VitalSign, 'vitalsign')
+router.register(r'assessments', Assessments, 'assessment')
+
 
 
 urlpatterns = [
