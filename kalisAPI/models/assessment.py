@@ -7,7 +7,6 @@ class Assessment(models.Model):
     mental_status = models.CharField(max_length=100)
     pupil_response = models.CharField(max_length=50)
     heart_sounds = models.CharField(max_length=50)
-    edema = models.CharField(max_length=50)
     breath_sounds = models.CharField(max_length=50)
     edema = models.CharField(max_length=50)
     oxygen_rate = models.IntegerField()
