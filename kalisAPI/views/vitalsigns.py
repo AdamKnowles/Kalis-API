@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from kalisAPI.models import VitalSigns, Patient
+from rest_framework.decorators import action
 
 
 
@@ -25,9 +26,9 @@ class VitalSignSerializer(serializers.HyperlinkedModelSerializer):
             view_name='vitalsign',
             lookup_field='id'
         )
-        fields = ('id', 'time', 'temperature', 'heart_rate', 'blood_pressure', 'respiration_rate', 'oxygen_saturation', 'patient')
+        fields = ('id', 'time', 'temperature', 'heart_rate', 'blood_pressure', 'respiration_rate', 'oxygen_saturation','patient_id', 'patient')
 
-        depth = 1
+        depth = 2
 
 
 class VitalSign(ViewSet):
@@ -98,4 +99,13 @@ class VitalSign(ViewSet):
         
         serializer = VitalSignSerializer(
             vitalsigns, many=True, context={'request': request})
+        return Response(serializer.data)
+
+    @action(methods=['get'], detail=True)
+    def patientvitalsigns(self, request):
+        current_patient = Patient.objects.get(pk=request.data["patient_id"])
+        vitalsigns = VitalSigns.objects.all()
+        vitalsigns = vitalsigns.filter(patient=current_patient)
+
+        serializer = VitalSignSerializer(vitalsigns, many=True, context={'request': request})
         return Response(serializer.data)
