@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from kalisAPI.models import Patient, Assessment
+from rest_framework.decorators import action
 
 
 
@@ -25,7 +26,7 @@ class AssessmentSerializer(serializers.HyperlinkedModelSerializer):
             view_name='assessments',
             lookup_field='id'
         )
-        fields = ('id', 'time', 'mental_status', 'pupil_response', 'heart_sounds', 'breath_sounds', 'edema', 'oxygen_rate', 'bowel_sounds', 'npo', 'last_bowel_movement', 'urine_color', 'urine_odor', 'urine_amount', 'patient')
+        fields = ('id', 'time', 'mental_status', 'pupil_response', 'heart_sounds', 'breath_sounds', 'edema', 'oxygen_rate', 'bowel_sounds', 'npo', 'last_bowel_movement', 'urine_color', 'urine_odor', 'urine_amount', 'patient_id', 'patient')
 
         depth = 1
 
@@ -105,4 +106,15 @@ class Assessments(ViewSet):
         
         serializer = AssessmentSerializer(
             assessments, many=True, context={'request': request})
+        return Response(serializer.data)
+
+
+
+    @action(methods=['get'], detail=False)
+    def patientassessments(self, request):
+        current_patient = Patient.objects.get().pk
+        assessments = Assessment.objects.all()
+        assessments = assessments.filter(patient=current_patient)
+
+        serializer = AssessmentSerializer(assessments, many=True, context={'request': request})
         return Response(serializer.data)
