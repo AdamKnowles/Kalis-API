@@ -5,6 +5,7 @@ from rest_framework import serializers
 from rest_framework import status
 from kalisAPI.models import VitalSigns, Patient
 from rest_framework.decorators import action
+from datetime import datetime
 
 
 
@@ -41,7 +42,7 @@ class VitalSign(ViewSet):
             Response -- JSON serialized vital sign instance
         """
         new_vitalsign = VitalSigns()
-        new_vitalsign.time = request.data["time"]
+        new_vitalsign.time = datetime.now()
         new_vitalsign.temperature = request.data["temperature"]
         new_vitalsign.heart_rate = request.data["heart_rate"]
         new_vitalsign.blood_pressure = request.data["blood_pressure"]
