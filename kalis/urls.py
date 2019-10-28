@@ -7,12 +7,14 @@ from kalisAPI.views import UserViewSet
 from kalisAPI.views import Patients
 from kalisAPI.views import VitalSign
 from kalisAPI.views import Assessments
+from kalisAPI.views import MyPatient
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'users', UserViewSet, 'user')
 router.register(r'patients', Patients, 'patient')
 router.register(r'vitalsigns', VitalSign, 'vitalsign')
 router.register(r'assessments', Assessments, 'assessment')
+router.register(r'mypatients', MyPatient, 'mypatient')
 
 
 
