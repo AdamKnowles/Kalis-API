@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'kalisAPI',
     'rest_framework',
     'rest_framework.authtoken',
+    'safedelete',
 ]
 
 MIDDLEWARE = [

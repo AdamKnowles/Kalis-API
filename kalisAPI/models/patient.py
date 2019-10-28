@@ -1,7 +1,10 @@
 from django.db import models
+from safedelete.models import SafeDeleteModel
+from safedelete.models import SOFT_DELETE
 
 
-class Patient(models.Model):
+class Patient(SafeDeleteModel):
+    _safedelete_policy = SOFT_DELETE
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     birth_date = models.DateField()
