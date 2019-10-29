@@ -34,6 +34,23 @@ class MyPatientSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class MyPatient(ViewSet):
+
+    def create(self, request):
+        """Handle POST operations
+
+        Returns:
+            Response -- JSON serialized vital sign instance
+        """
+        new_mypatient = MyPatients()
+        patient = Patient.objects.get(pk=request.data["patient_id"])
+        new_mypatient.patient = patient
+        user = User.objects.get(pk=request.user.pk)
+        new_mypatient.user = user
+        new_mypatient.save()
+
+        serializer = MyPatientSerializer(new_mypatient, context={'request': request})
+
+        return Response(serializer.data)
     
 
     def retrieve(self, request, pk=None):
