@@ -70,6 +70,23 @@ class VitalSign(ViewSet):
         except Exception as ex:
             return HttpResponseServerError(ex)
 
+    def update(self, request, pk=None):
+        """Handle PUT requests for an individual vitalsign
+        Returns:
+            Response -- Empty body with 204 status code
+        """
+        updated_vitalsign = VitalSigns.objects.get(pk=pk)
+        updated_vitalsign.temperature = request.data["temperature"]
+        updated_vitalsign.blood_pressure = request.data["blood_pressure"]
+        updated_vitalsign.heart_rate = request.data["heart_rate"]
+        updated_vitalsign.respiration_rate = request.data["respiration_rate"]
+        updated_vitalsign.oxygen_saturation = request.data["oxygen_saturation"]
+        updated_vitalsign.save()
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
+
+    
+
     def destroy(self, request, pk=None):
         """Handle DELETE requests for a patient
 

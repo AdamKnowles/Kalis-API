@@ -78,6 +78,29 @@ class Assessments(ViewSet):
         except Exception as ex:
             return HttpResponseServerError(ex)
 
+
+    def update(self, request, pk=None):
+        """Handle PUT requests for an individual vitalsign
+        Returns:
+            Response -- Empty body with 204 status code
+        """
+        updated_assessment = Assessment.objects.get(pk=pk)
+        updated_assessment.mental_status = request.data["mental_status"]
+        updated_assessment.pupil_response = request.data["pupil_response"]
+        updated_assessment.heart_sounds = request.data["heart_sounds"]
+        updated_assessment.breath_sounds = request.data["breath_sounds"]
+        updated_assessment.edema = request.data["edema"]
+        updated_assessment.oxygen_rate = request.data["oxygen_rate"]
+        updated_assessment.bowel_sounds = request.data["bowel_sounds"]
+        updated_assessment.npo = request.data["npo"]
+        updated_assessment.last_bowel_movement = request.data["last_bowel_movement"]
+        updated_assessment.urine_color = request.data["urine_color"]
+        updated_assessment.urine_odor = request.data["urine_odor"]
+        updated_assessment.urine_amount = request.data["urine_amount"]
+        updated_assessment.save()
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
+
     def destroy(self, request, pk=None):
         """Handle DELETE requests for a patient
 

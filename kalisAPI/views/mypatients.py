@@ -26,7 +26,7 @@ class MyPatientSerializer(serializers.HyperlinkedModelSerializer):
             view_name='mypatients',
             lookup_field='id'
         )
-        fields = ('id', 'patient', 'user', 'user_id')
+        fields = ('id', 'patient', 'patient_id', 'user', 'user_id')
 
         depth = 1
 
@@ -64,6 +64,24 @@ class MyPatient(ViewSet):
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
+
+    def destroy(self, request, pk=None):
+        """Handle DELETE requests for a patient
+
+        Returns:
+            Response -- 200, 404, or 500 status code
+        """
+        try:
+            mypatient = MyPatients.objects.get(pk=pk)
+            mypatient.delete()
+
+            return Response({}, status=status.HTTP_204_NO_CONTENT)
+
+        except MyPatients.DoesNotExist as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     
 
