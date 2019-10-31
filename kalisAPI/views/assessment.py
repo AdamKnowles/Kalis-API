@@ -127,7 +127,7 @@ class Assessments(ViewSet):
         """
 
     # at the bottom, in the serializer, it returns all patients because "patients" is defined as "patient.objects.all()"
-        assessments = Assessment.objects.all()
+        assessments = Assessment.objects.all().order_by('id').reverse()
         
         serializer = AssessmentSerializer(
             assessments, many=True, context={'request': request})

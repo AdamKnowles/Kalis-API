@@ -100,6 +100,16 @@ class Patients(ViewSet):
         if limit is not None:
             patients = Patient.objects.all()[:int(limit)]
 
+
+         #filter by patient last name
+        last_name = self.request.query_params.get('last_name', None)
+        
+
+        if last_name == "":
+            patients = Patient.objects.all()
+        elif last_name is not None:
+            patients = Patient.objects.filter(last_name=last_name.lower())
+
         
         serializer = PatientSerializer(
             patients, many=True, context={'request': request})
