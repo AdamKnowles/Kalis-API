@@ -92,7 +92,8 @@ class Patients(ViewSet):
         """
 
     # at the bottom, in the serializer, it returns all patients because "patients" is defined as "patient.objects.all()"
-        patients = Patient.objects.all()
+        # patients = Patient.objects.all()
+        patients = Patient.objects.all().order_by("last_name")
         patient_list = []
 
         limit = self.request.query_params.get('limit', None)
