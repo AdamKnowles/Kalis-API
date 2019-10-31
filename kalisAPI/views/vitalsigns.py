@@ -113,7 +113,7 @@ class VitalSign(ViewSet):
         """
 
     # at the bottom, in the serializer, it returns all patients because "patients" is defined as "patient.objects.all()"
-        vitalsigns = VitalSigns.objects.all()
+        vitalsigns = VitalSigns.objects.all().order_by('id').reverse()
         
         serializer = VitalSignSerializer(
             vitalsigns, many=True, context={'request': request})
