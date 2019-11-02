@@ -1,10 +1,11 @@
 from django.db import models
 from .patient import Patient
+from .mentalstatus import MentalStatus
 
 
 class Assessment(models.Model):
     time = models.DateTimeField(auto_now_add=True)
-    mental_status = models.CharField(max_length=100)
+    mental_status = models.ForeignKey(MentalStatus, on_delete=models.DO_NOTHING)
     pupil_response = models.CharField(max_length=50)
     heart_sounds = models.CharField(max_length=50)
     breath_sounds = models.CharField(max_length=50)

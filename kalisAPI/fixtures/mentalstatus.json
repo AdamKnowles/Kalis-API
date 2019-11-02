@@ -1,0 +1,19 @@
+[
+    {
+      "model": "kalisAPI.mentalstatus",
+      "pk": 1,
+      "fields": {
+        "mental_status": "Alert and Oriented "
+        
+      }
+    },
+    {
+      "model": "kalisAPI.mentalstatus",
+      "pk": 2,
+      "fields": {
+        "mental_status": "Disoriented"
+        
+      }
+    }
+    
+  ]
