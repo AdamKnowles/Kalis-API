@@ -11,3 +11,7 @@ from .breathsounds import BreathSoundsDropdown
 from .bowelsounds import BowelSoundsDropdown
 from .npo import NpoDropdown
 from .pupilresponse import PupilResponseDropdown
+from .edema import EdemaDropdown
+from .urinecolor import UrineColorDropdown
+from .urineodor import UrineOdorDropdown
+from .oxygenrate import OxygenRateDropdown

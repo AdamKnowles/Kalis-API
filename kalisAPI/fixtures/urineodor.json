@@ -1,0 +1,28 @@
+[
+    {
+      "model": "kalisAPI.urineodor",
+      "pk": 1,
+      "fields": {
+        "urine_odor": "None"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.urineodor",
+      "pk": 2,
+      "fields": {
+        "urine_odor": "Mild"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.urineodor",
+      "pk": 3,
+      "fields": {
+        "urine_odor": "Strong"
+        
+      }
+    }
+    
+    
+  ]

@@ -1,0 +1,76 @@
+[
+    {
+      "model": "kalisAPI.oxygenrate",
+      "pk": 1,
+      "fields": {
+        "oxygen_rate": "0"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.oxygenrate",
+      "pk": 2,
+      "fields": {
+        "oxygen_rate": "1"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.oxygenrate",
+      "pk": 3,
+      "fields": {
+        "oxygen_rate": "2"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.oxygenrate",
+      "pk": 4,
+      "fields": {
+        "oxygen_rate": "3"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.oxygenrate",
+      "pk": 5,
+      "fields": {
+        "oxygen_rate": "4"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.oxygenrate",
+      "pk": 6,
+      "fields": {
+        "oxygen_rate": "5"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.oxygenrate",
+      "pk": 7,
+      "fields": {
+        "oxygen_rate": "6"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.oxygenrate",
+      "pk": 8,
+      "fields": {
+        "oxygen_rate": "7"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.oxygenrate",
+      "pk": 9,
+      "fields": {
+        "oxygen_rate": "8"
+        
+      }
+    }
+    
+    
+  ]

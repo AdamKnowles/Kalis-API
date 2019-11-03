@@ -1,0 +1,35 @@
+[
+    {
+      "model": "kalisAPI.edema",
+      "pk": 1,
+      "fields": {
+        "edema": "None"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.edema",
+      "pk": 2,
+      "fields": {
+        "edema": "1"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.edema",
+      "pk": 3,
+      "fields": {
+        "edema": "2"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.edema",
+      "pk": 4,
+      "fields": {
+        "edema": "3"
+        
+      }
+    }
+    
+  ]

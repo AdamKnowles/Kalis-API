@@ -14,6 +14,13 @@ from kalisAPI.views import BreathSoundsDropdown
 from kalisAPI.views import BowelSoundsDropdown
 from kalisAPI.views import NpoDropdown
 from kalisAPI.views import PupilResponseDropdown
+from kalisAPI.views import EdemaDropdown
+from kalisAPI.views import UrineColorDropdown
+from kalisAPI.views import UrineOdorDropdown
+from kalisAPI.views import OxygenRateDropdown
+
+
+
 
 
 
@@ -31,6 +38,10 @@ router.register(r'breathsounds', BreathSoundsDropdown , 'breathsounds')
 router.register(r'bowelsounds', BowelSoundsDropdown , 'bowelsounds')
 router.register(r'npo', NpoDropdown , 'npo')
 router.register(r'pupilresponse', PupilResponseDropdown , 'pupilresponse')
+router.register(r'edema', EdemaDropdown , 'edema')
+router.register(r'urinecolor', UrineColorDropdown , 'urinecolor')
+router.register(r'urineodor', UrineOdorDropdown , 'urineodor')
+router.register(r'oxygenrate', OxygenRateDropdown , 'oxygenrate')
 
 
 
