@@ -10,6 +10,10 @@ from kalisAPI.views import Assessments
 from kalisAPI.views import MyPatient
 from kalisAPI.views import MentalStatusDropdown
 from kalisAPI.views import HeartSoundsDropdown
+from kalisAPI.views import BreathSoundsDropdown
+from kalisAPI.views import BowelSoundsDropdown
+
+
 
 
 router = routers.DefaultRouter(trailing_slash=False)
@@ -20,6 +24,8 @@ router.register(r'assessments', Assessments, 'assessment')
 router.register(r'mypatients', MyPatient, 'mypatient')
 router.register(r'mentalstatus', MentalStatusDropdown , 'mentalstatus')
 router.register(r'heartsounds', HeartSoundsDropdown , 'heartsounds')
+router.register(r'breathsounds', BreathSoundsDropdown , 'breathsounds')
+router.register(r'bowelsounds', BowelSoundsDropdown , 'bowelsounds')
 
 
 
