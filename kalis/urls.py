@@ -12,6 +12,8 @@ from kalisAPI.views import MentalStatusDropdown
 from kalisAPI.views import HeartSoundsDropdown
 from kalisAPI.views import BreathSoundsDropdown
 from kalisAPI.views import BowelSoundsDropdown
+from kalisAPI.views import NpoDropdown
+
 
 
 
@@ -26,6 +28,7 @@ router.register(r'mentalstatus', MentalStatusDropdown , 'mentalstatus')
 router.register(r'heartsounds', HeartSoundsDropdown , 'heartsounds')
 router.register(r'breathsounds', BreathSoundsDropdown , 'breathsounds')
 router.register(r'bowelsounds', BowelSoundsDropdown , 'bowelsounds')
+router.register(r'npo', NpoDropdown , 'npo')
 
 
 

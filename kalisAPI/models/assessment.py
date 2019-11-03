@@ -4,6 +4,7 @@ from .mentalstatus import MentalStatus
 from .heartsounds import HeartSounds
 from .breathsounds import BreathSounds
 from .bowelsounds import BowelSounds
+from .npo import Npo
 
 
 class Assessment(models.Model):
@@ -15,7 +16,7 @@ class Assessment(models.Model):
     edema = models.CharField(max_length=50)
     oxygen_rate = models.IntegerField()
     bowel_sounds = models.ForeignKey(BowelSounds, on_delete=models.DO_NOTHING)
-    npo = models.CharField(max_length=50)
+    npo = models.ForeignKey(Npo, on_delete=models.DO_NOTHING)
     last_bowel_movement = models.DateField()
     urine_color = models.CharField(max_length=50)
     urine_odor = models.CharField(max_length=50)
