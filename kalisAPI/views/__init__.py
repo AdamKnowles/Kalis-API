@@ -6,3 +6,4 @@ from .vitalsigns import VitalSign
 from .assessment import Assessments
 from .mypatients import MyPatient
 from .mentalstatus import MentalStatusDropdown
+from .heartsounds import HeartSoundsDropdown
