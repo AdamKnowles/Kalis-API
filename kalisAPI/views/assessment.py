@@ -3,7 +3,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from kalisAPI.models import Patient, Assessment, MentalStatus, HeartSounds, BreathSounds, Npo
+from kalisAPI.models import Patient, Assessment, MentalStatus, HeartSounds, BreathSounds, Npo, PupilResponse
 from rest_framework.decorators import action
 from datetime import datetime
 from datetime import date
@@ -28,7 +28,7 @@ class AssessmentSerializer(serializers.HyperlinkedModelSerializer):
             view_name='assessments',
             lookup_field='id'
         )
-        fields = ('id', 'time', 'mental_status', 'mental_status_id', 'pupil_response', 'heart_sounds','heart_sounds_id', 'breath_sounds', 'breath_sounds_id', 'edema', 'oxygen_rate', 'bowel_sounds', 'npo', 'npo_id', 'last_bowel_movement', 'urine_color', 'urine_odor', 'urine_amount', 'patient_id', 'patient')
+        fields = ('id', 'time', 'mental_status', 'mental_status_id', 'pupil_response', 'pupil_response_id', 'heart_sounds','heart_sounds_id', 'breath_sounds', 'breath_sounds_id', 'edema', 'oxygen_rate', 'bowel_sounds', 'npo', 'npo_id', 'last_bowel_movement', 'urine_color', 'urine_odor', 'urine_amount', 'patient_id', 'patient')
 
         depth = 1
 
@@ -48,7 +48,8 @@ class Assessments(ViewSet):
             pk=request.data['mental_status'])
         new_assessment.heart_sounds = HeartSounds.objects.get(
             pk=request.data['heart_sounds'])
-        new_assessment.pupil_response = request.data["pupil_response"] 
+        new_assessment.pupil_response = PupilResponse.objects.get(
+            pk=request.data['pupil_response']) 
         new_assessment.breath_sounds = BreathSounds.objects.get(
             pk=request.data['breath_sounds'])
         new_assessment.edema = request.data["edema"]

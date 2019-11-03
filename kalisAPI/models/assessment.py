@@ -5,12 +5,13 @@ from .heartsounds import HeartSounds
 from .breathsounds import BreathSounds
 from .bowelsounds import BowelSounds
 from .npo import Npo
+from .pupilresponse import PupilResponse
 
 
 class Assessment(models.Model):
     time = models.DateTimeField(auto_now_add=True)
     mental_status = models.ForeignKey(MentalStatus, on_delete=models.DO_NOTHING)
-    pupil_response = models.CharField(max_length=50)
+    pupil_response = models.ForeignKey(PupilResponse, on_delete=models.DO_NOTHING)
     heart_sounds = models.ForeignKey(HeartSounds, on_delete=models.DO_NOTHING)
     breath_sounds = models.ForeignKey(BreathSounds, on_delete=models.DO_NOTHING)
     edema = models.CharField(max_length=50)

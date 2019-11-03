@@ -5,7 +5,7 @@
       "fields": {
         "time": "2019-10-24 00:00:00",
         "mental_status": 1,
-        "pupil_response": "2mm",
+        "pupil_response": 6,
         "heart_sounds": 3,
         "breath_sounds": 1,
         "edema": "2+",
@@ -25,7 +25,7 @@
       "fields": {
         "time": "2019-10-24 00:00:00",
         "mental_status": 2,
-        "pupil_response": "1mm",
+        "pupil_response": 4,
         "heart_sounds": 2,
         "breath_sounds": 2,
         "edema": "2+",
@@ -45,7 +45,7 @@
       "fields": {
         "time": "2019-10-24 00:00:00",
         "mental_status": 1,
-        "pupil_response": "none",
+        "pupil_response": 1,
         "heart_sounds": 1,
         "breath_sounds": 3,
         "edema": "2+",
