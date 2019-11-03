@@ -1,0 +1,27 @@
+[
+    {
+      "model": "kalisAPI.heartsounds",
+      "pk": 1,
+      "fields": {
+        "heart_sounds": "Normal"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.heartsounds",
+      "pk": 2,
+      "fields": {
+        "heart_sounds": "Murmur"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.heartsounds",
+      "pk": 3,
+      "fields": {
+        "heart_sounds": "Arrythmia"
+        
+      }
+    }
+    
+  ]

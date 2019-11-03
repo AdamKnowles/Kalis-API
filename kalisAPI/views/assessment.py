@@ -3,7 +3,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from kalisAPI.models import Patient, Assessment
+from kalisAPI.models import Patient, Assessment, MentalStatus, HeartSounds, BreathSounds, Npo, PupilResponse, Edema, BowelSounds, UrineColor, UrineOdor, OxygenRate
 from rest_framework.decorators import action
 from datetime import datetime
 from datetime import date
@@ -28,7 +28,7 @@ class AssessmentSerializer(serializers.HyperlinkedModelSerializer):
             view_name='assessments',
             lookup_field='id'
         )
-        fields = ('id', 'time', 'mental_status', 'pupil_response', 'heart_sounds', 'breath_sounds', 'edema', 'oxygen_rate', 'bowel_sounds', 'npo', 'last_bowel_movement', 'urine_color', 'urine_odor', 'urine_amount', 'patient_id', 'patient')
+        fields = ('id', 'time', 'mental_status', 'mental_status_id', 'pupil_response', 'pupil_response_id', 'heart_sounds','heart_sounds_id', 'breath_sounds', 'breath_sounds_id', 'edema', 'edema_id', 'oxygen_rate', 'oxygen_rate_id', 'bowel_sounds', 'bowel_sounds_id', 'npo', 'npo_id', 'last_bowel_movement', 'urine_color', 'urine_color_id', 'urine_odor', 'urine_odor_id', 'urine_amount', 'patient_id', 'patient')
 
         depth = 1
 
@@ -44,17 +44,27 @@ class Assessments(ViewSet):
         """
         new_assessment = Assessment()
         new_assessment.time = datetime.now()
-        new_assessment.mental_status = request.data["mental_status"]
-        new_assessment.pupil_response = request.data["pupil_response"]
-        new_assessment.heart_sounds = request.data["heart_sounds"]
-        new_assessment.breath_sounds = request.data["breath_sounds"]
-        new_assessment.edema = request.data["edema"]
-        new_assessment.oxygen_rate = request.data["oxygen_rate"]
-        new_assessment.bowel_sounds = request.data["bowel_sounds"]
-        new_assessment.npo = request.data["npo"]
+        new_assessment.mental_status = MentalStatus.objects.get(
+            pk=request.data['mental_status'])
+        new_assessment.heart_sounds = HeartSounds.objects.get(
+            pk=request.data['heart_sounds'])
+        new_assessment.pupil_response = PupilResponse.objects.get(
+            pk=request.data['pupil_response']) 
+        new_assessment.breath_sounds = BreathSounds.objects.get(
+            pk=request.data['breath_sounds'])
+        new_assessment.edema = Edema.objects.get(
+            pk=request.data['edema'])
+        new_assessment.oxygen_rate = OxygenRate.objects.get(
+            pk=request.data['oxygen_rate'])
+        new_assessment.bowel_sounds = BowelSounds.objects.get(
+            pk=request.data['bowel_sounds'])
+        new_assessment.npo = Npo.objects.get(
+            pk=request.data['npo'])
         new_assessment.last_bowel_movement = request.data["last_bowel_movement"]
-        new_assessment.urine_color = request.data["urine_color"]
-        new_assessment.urine_odor = request.data["urine_odor"]
+        new_assessment.urine_color = UrineColor.objects.get(
+            pk=request.data['urine_color'])
+        new_assessment.urine_odor = UrineOdor.objects.get(
+            pk=request.data['urine_odor'])
         new_assessment.urine_amount = request.data["urine_amount"]
         patient = Patient.objects.get(pk=request.data["patient_id"])
         new_assessment.patient = patient

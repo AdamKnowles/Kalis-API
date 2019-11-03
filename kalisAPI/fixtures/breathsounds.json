@@ -1,0 +1,43 @@
+[
+    {
+      "model": "kalisAPI.breathsounds",
+      "pk": 1,
+      "fields": {
+        "breath_sounds": "Clear"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.breathsounds",
+      "pk": 2,
+      "fields": {
+        "breath_sounds": "Diminished"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.breathsounds",
+      "pk": 3,
+      "fields": {
+        "breath_sounds": "Wheezes"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.breathsounds",
+      "pk": 4,
+      "fields": {
+        "breath_sounds": "Crackles"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.breathsounds",
+      "pk": 5,
+      "fields": {
+        "breath_sounds": "Rhonchi"
+        
+      }
+    }
+    
+  ]

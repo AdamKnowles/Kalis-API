@@ -6,6 +6,8 @@ from rest_framework import status
 from kalisAPI.models import Patient, VitalSigns
 from .vitalsigns import VitalSignSerializer
 from rest_framework.decorators import action
+from django.db import models
+
 
 
 """Author: Adam Knowles
@@ -26,7 +28,7 @@ class PatientSerializer(serializers.HyperlinkedModelSerializer):
             view_name='patient',
             lookup_field='id'
         )
-        fields = ('id', 'first_name', 'last_name', 'birth_date', 'sex', 'diagnosis')
+        fields = ('id', 'first_name', 'last_name', 'birth_date', 'sex', 'diagnosis', 'deleted')
 
         depth = 1
 
@@ -114,5 +116,9 @@ class Patients(ViewSet):
         serializer = PatientSerializer(
             patients, many=True, context={'request': request})
         return Response(serializer.data)
+
+class AccountManager(models.Manager): 
+      def get_query_set(self):
+          return self.filter(patients__deleted=True).filter(deleted=True)
 
     

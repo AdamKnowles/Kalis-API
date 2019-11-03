@@ -1,0 +1,76 @@
+[
+    {
+      "model": "kalisAPI.pupilresponse",
+      "pk": 1,
+      "fields": {
+        "pupil_response": "0"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.pupilresponse",
+      "pk": 2,
+      "fields": {
+        "pupil_response": "1"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.pupilresponse",
+      "pk": 3,
+      "fields": {
+        "pupil_response": "2"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.pupilresponse",
+      "pk": 4,
+      "fields": {
+        "pupil_response": "3"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.pupilresponse",
+      "pk": 5,
+      "fields": {
+        "pupil_response": "4"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.pupilresponse",
+      "pk": 6,
+      "fields": {
+        "pupil_response": "5"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.pupilresponse",
+      "pk": 7,
+      "fields": {
+        "pupil_response": "6"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.pupilresponse",
+      "pk": 8,
+      "fields": {
+        "pupil_response": "7"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.pupilresponse",
+      "pk": 9,
+      "fields": {
+        "pupil_response": "8"
+        
+      }
+    }
+    
+    
+  ]

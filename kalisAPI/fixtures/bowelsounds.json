@@ -1,0 +1,27 @@
+[
+    {
+      "model": "kalisAPI.bowelsounds",
+      "pk": 1,
+      "fields": {
+        "bowel_sounds": "Active"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.bowelsounds",
+      "pk": 2,
+      "fields": {
+        "bowel_sounds": "Hypoactive"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.bowelsounds",
+      "pk": 3,
+      "fields": {
+        "bowel_sounds": "Hyperactive"
+        
+      }
+    }
+    
+  ]

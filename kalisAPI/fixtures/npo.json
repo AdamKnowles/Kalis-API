@@ -1,0 +1,20 @@
+[
+    {
+      "model": "kalisAPI.npo",
+      "pk": 1,
+      "fields": {
+        "npo": "Yes"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.npo",
+      "pk": 2,
+      "fields": {
+        "npo": "No"
+      }
+        
+      }
+    
+    
+  ]

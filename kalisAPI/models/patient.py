@@ -18,3 +18,4 @@ class Patient(SafeDeleteModel):
 
     def __str__(self):
         return self.last_name
+
