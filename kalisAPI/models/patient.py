@@ -1,4 +1,5 @@
 from django.db import models
+from .patientgender import PatientGender
 from safedelete.models import SafeDeleteModel
 from safedelete.models import SOFT_DELETE
 
@@ -8,7 +9,7 @@ class Patient(SafeDeleteModel):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     birth_date = models.DateField()
-    sex = models.CharField(max_length=50)
+    sex = models.ForeignKey(PatientGender, on_delete=models.DO_NOTHING)
     diagnosis = models.CharField(max_length=100)
     
 

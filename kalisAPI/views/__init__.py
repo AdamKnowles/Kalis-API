@@ -15,3 +15,4 @@ from .edema import EdemaDropdown
 from .urinecolor import UrineColorDropdown
 from .urineodor import UrineOdorDropdown
 from .oxygenrate import OxygenRateDropdown
+from .patientgender import PatientGenderDropdown

@@ -1,0 +1,21 @@
+
+[
+    {
+      "model": "kalisAPI.patientgender",
+      "pk": 1,
+      "fields": {
+        "sex": "Male"
+        
+      }
+    },
+    {
+      "model": "kalisAPI.patientgender",
+      "pk": 2,
+      "fields": {
+        "sex": "Female"
+      }
+        
+      }
+    
+    
+  ]

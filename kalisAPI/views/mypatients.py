@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from kalisAPI.models import Patient
+from kalisAPI.models import PatientGender
 from kalisAPI.models import MyPatients
 from .patient import PatientSerializer
 from rest_framework.decorators import action
@@ -28,7 +29,7 @@ class MyPatientSerializer(serializers.HyperlinkedModelSerializer):
         )
         fields = ('id', 'patient', 'patient_id', 'user', 'user_id')
 
-        depth = 1
+        depth = 2
 
         
 
@@ -102,6 +103,7 @@ class MyPatient(ViewSet):
         mypatients = MyPatients.objects.all()
         current_user = User.objects.get(pk=request.user.pk)
         mypatients = MyPatients.objects.filter(user=current_user)
+        
 
         serializer = MyPatientSerializer(
             mypatients, many=True, context={'request': request})

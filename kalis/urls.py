@@ -18,6 +18,8 @@ from kalisAPI.views import EdemaDropdown
 from kalisAPI.views import UrineColorDropdown
 from kalisAPI.views import UrineOdorDropdown
 from kalisAPI.views import OxygenRateDropdown
+from kalisAPI.views import PatientGenderDropdown
+
 
 
 
@@ -42,6 +44,7 @@ router.register(r'edema', EdemaDropdown , 'edema')
 router.register(r'urinecolor', UrineColorDropdown , 'urinecolor')
 router.register(r'urineodor', UrineOdorDropdown , 'urineodor')
 router.register(r'oxygenrate', OxygenRateDropdown , 'oxygenrate')
+router.register(r'patientgender', PatientGenderDropdown , 'patientgender')
 
 
 
