@@ -7,6 +7,7 @@ from kalisAPI.models import Patient, VitalSigns
 from .vitalsigns import VitalSignSerializer
 from rest_framework.decorators import action
 from django.db import models
+from datetime import datetime
 
 
 
@@ -42,17 +43,20 @@ class Patients(ViewSet):
         Returns:
             Response -- JSON serialized patient instance
         """
-        new_patient = Patient()
-        new_patient.first_name = request.data["first_name"]
-        new_patient.last_name = request.data["last_name"]
-        new_patient.birth_date = request.data["birth_date"]
-        new_patient.sex = request.data["sex"]
-        new_patient.diagnosis = request.data["diagnosis"].lower()
-        new_patient.save()
+        if datetime.today() >= datetime.strptime(request.data["birth_date"], '%Y-%m-%d'):
+            new_patient = Patient()
+            new_patient.first_name = request.data["first_name"]
+            new_patient.last_name = request.data["last_name"]
+            new_patient.birth_date = request.data["birth_date"]
+            new_patient.sex = request.data["sex"]
+            new_patient.diagnosis = request.data["diagnosis"].lower()
+            new_patient.save()
 
-        serializer = PatientSerializer(new_patient, context={'request': request})
+            serializer = PatientSerializer(new_patient, context={'request': request})
 
-        return Response(serializer.data)
+            return Response(serializer.data)
+        else:
+            return Response({"error" : "Can not have birth date in the future"}, status=status.HTTP_400_BAD_REQUEST)    
 
     def retrieve(self, request, pk=None):
         """Handle GET requests for single patient
