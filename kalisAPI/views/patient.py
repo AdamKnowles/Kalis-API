@@ -3,7 +3,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from kalisAPI.models import Patient, VitalSigns
+from kalisAPI.models import Patient, VitalSigns, PatientGender
 from .vitalsigns import VitalSignSerializer
 from rest_framework.decorators import action
 from django.db import models
@@ -31,7 +31,7 @@ class PatientSerializer(serializers.HyperlinkedModelSerializer):
         )
         fields = ('id', 'first_name', 'last_name', 'birth_date', 'sex', 'diagnosis', 'deleted')
 
-        depth = 1
+        depth = 2
 
 
 class Patients(ViewSet):
@@ -48,7 +48,8 @@ class Patients(ViewSet):
             new_patient.first_name = request.data["first_name"]
             new_patient.last_name = request.data["last_name"]
             new_patient.birth_date = request.data["birth_date"]
-            new_patient.sex = request.data["sex"]
+            new_patient.sex = PatientGender.objects.get(
+                pk=request.data['sex'])
             new_patient.diagnosis = request.data["diagnosis"].lower()
             new_patient.save()
 

@@ -12,3 +12,4 @@ from .edema import Edema
 from .urinecolor import UrineColor
 from .urineodor import UrineOdor
 from .oxygenrate import OxygenRate
+from .patientgender import PatientGender

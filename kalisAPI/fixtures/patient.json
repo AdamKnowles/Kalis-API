@@ -6,7 +6,7 @@
         "first_name": "Adam",
         "last_name": "Knowles",
         "birth_date": "1987-05-24",
-        "sex": "Male",
+        "sex": 1,
         "diagnosis": "Gout"
       }
     },
@@ -17,7 +17,7 @@
         "first_name": "Grant",
         "last_name": "Yentzer",
         "birth_date": "1991-05-29",
-        "sex": "Male",
+        "sex": 1,
         "diagnosis": "AKI"
       }
     },
@@ -28,7 +28,7 @@
         "first_name": "Jeremy",
         "last_name": "Davis",
         "birth_date": "1991-01-29",
-        "sex": "Male",
+        "sex": 1,
         "diagnosis": "Anxiety"
       }
     }
