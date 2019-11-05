@@ -129,7 +129,7 @@ class Assessments(ViewSet):
 
             return Response(serializer.data)
         else:
-            return Response({"error" : "Can not have birth date in the future"}, status=status.HTTP_400_BAD_REQUEST)    
+            return Response({"error" : "Can not have BM date in the future"}, status=status.HTTP_400_BAD_REQUEST)    
 
     def destroy(self, request, pk=None):
         """Handle DELETE requests for a patient
