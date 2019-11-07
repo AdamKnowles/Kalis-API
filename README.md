@@ -51,5 +51,5 @@ This should get the API up and working.
 
 ### To use this app in full, you will need to clone down the "client side" repository as well as this API repository.
 
-[client-side application](https://github.com/AdamKnowles/kalis-client-side) via HTTP
+Please clone down client-side application at https://github.com/AdamKnowles/kalis-client-side
 
