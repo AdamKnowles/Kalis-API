@@ -1,4 +1,4 @@
-# Directions to using Kalis API
+## Directions to using Kalis API
 
 After cloning project, open up your terminal, cd into the project. Then execute these commands:
 
@@ -10,7 +10,7 @@ If this command doesnt work, cd into the environent, cd into the scripts directo
 
 ```pip install -r requirements.txt```
 
-This set of commands sets up the database and loads all data necessary. Please run the commands *in this order*.
+This set of commands sets up the database and loads all data necessary. Please run the commands **in this order**.
 
 ```python manage.py makemigrations kalisAPI```
 
@@ -49,7 +49,7 @@ This set of commands sets up the database and loads all data necessary. Please r
 
 This should get the API up and working. 
 
-## To use this app in full, you will need to clone down the "client side" repository as well as this API repository.
+### To use this app in full, you will need to clone down the "client side" repository as well as this API repository.
 
 [client-side application](https://github.com/AdamKnowles/kalis-client-side) via HTTP
 
