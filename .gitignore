@@ -31,7 +31,7 @@ media/
 
 # django migrations
 migrations
-README.md
+
 
 #db location
 kalisAPI/views/connection.py
