@@ -3,7 +3,7 @@
       "model": "kalisAPI.mentalstatus",
       "pk": 1,
       "fields": {
-        "mental_status": "Alert and Oriented "
+        "mental_status": "Alert and Oriented"
         
       }
     },
